@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* .mat-mdc-text-field-wrapper {
+  width: 100% !important;
+} */
+
+.mat-mdc-text-field-wrapper {
+  height: 45px !important;
+  flex: auto !important;
+}
+
+.toast-container{
+  margin-top: 3.5% !important;
+}
+
+.toast-container .ngx-toastr{
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 6px;
+  width: 300px;
+  height:60px;
+  font-size:small;
+  font-weight: 500;
+  padding: 15px 15px 15px 50px;
+  margin-top: 3.5% !important;
+  border-radius: 15px !important;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  box-shadow: 0 0 12px rgb(0, 0, 0);
+}
+.swal2-show{
+  width: 370px !important;
+}
+
