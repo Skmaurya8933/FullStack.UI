@@ -1,0 +1,60 @@
+mat-toolbar{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  position: relative;
+  border-radius: 30px;
+}
+.mat-toolbar.mat-primary{
+
+  color: white m !important;
+  background: #002b5c !important;
+}
+mat-card
+{
+width:400px;
+height: 400px;
+position: absolute;
+top:0px;
+left: 0px;
+right: 0px;
+bottom: 0px;
+margin: auto;
+overflow: hidden;
+padding: 0px;
+border-radius: 30px;
+}
+mat-card-footer{
+  display: flex;
+  justify-content:center;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.mat-card:hover{
+  transition: all .30s linear;
+  box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+}
+span{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+mat-card-content{
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+  justify-content:center;
+  flex-grow:1;
+}
+.login-form{
+  width: 100%;
+}
+.login-button{
+  height:42px !important;
+  width:100% !important;
+}
+
+
+
+
+

@@ -1,0 +1,78 @@
+<div class="container" style="margin-top: -8%;">
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <span><mat-icon>supervised_user_circle</mat-icon>Employees</span>
+  <div class="spacer"></div>
+  <button mat-raised-button color="warn" (click)="Opendialog()">+Add Employee</button>
+</mat-toolbar>
+
+<div style="margin-top: 25px;">
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input class="searchinput" matInput (keyup)="applyFilter($event)" placeholder="ex. abc" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.employeeId}} </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.employeeName}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="empDoB">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Birth </th>
+        <td mat-cell *matCellDef="let row"> {{row.empDoB | date: 'MM-dd-yyyy'}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="empDateOFJoining">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </th>
+        <td mat-cell *matCellDef="let row"> {{row.empDateOFJoining | date: 'MM-dd-yyyy'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="empSalary">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Salary </th>
+        <td mat-cell *matCellDef="let row"> {{row.empSalary}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="empDepartment">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
+        <td mat-cell *matCellDef="let row"> {{row.empDepartment}} </td>
+      </ng-container>
+      <ng-container matColumnDef="empTechnicalSkills">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Skills </th>
+        <td mat-cell *matCellDef="let row"> {{row.empTechnicalSkills}} </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="editEmployee(row)" color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteEmployee(row.employeeId)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+           </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+</div>
+
