@@ -1,0 +1,14 @@
+.spacer{
+  flex:1 1 auto;
+}
+table {
+  width: 100%;
+}
+.mat-toolbar.mat-primary{
+  color: white m !important;
+  background: #002b5c !important;
+}
+mat-toolbar{
+  border-radius: 10px;
+}
+

@@ -33,7 +33,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { AccountService } from './appService/account.service';
 import { ToastrModule } from 'ngx-toastr';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatSelectModule,
     MatListModule,
     MatMenuModule,
+    MatTooltipModule,
+    MatSidenavModule,
     ToastrModule.forRoot({
       timeOut: 2500,
       positionClass: 'toast-top-right',

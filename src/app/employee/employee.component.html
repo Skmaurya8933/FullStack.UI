@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+  <span>Employee</span>
+</mat-toolbar>
+<mat-card>
+<mat-card-content>
+  <form class="my-form" [formGroup]="employeeform">
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="EmployeeName" required>
+      <mat-error *ngIf="!employeeform.get('EmployeeName').valid && employeeform.get('EmployeeName').touched">
+        EmployeeName is required
+       </mat-error>
+    </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>DOB</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="EmpDoB" required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="!employeeform.get('EmpDoB').valid && employeeform.get('EmpDoB').touched">
+          Employee Date of Birth is required
+          </mat-error>
+      </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Joining</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="EmpDateOFJoining" required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="!employeeform.get('EmpDateOFJoining').valid && employeeform.get('EmpDateOFJoining').touched">
+          Employee Date of Joining is required
+        </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Salary</mat-label>
+          <input type="text" matInput formControlName="EmpSalary" required>
+          <mat-error *ngIf="!employeeform.get('EmpSalary').valid && employeeform.get('EmpSalary').touched">
+            Employee salary is required
+          </mat-error>
+        </mat-form-field>
+
+       <mat-form-field appearance="outline">
+          <mat-label>Choose a Department</mat-label>
+          <mat-select formControlName="EmpDepartment" required>
+             <mat-option  value="marketing department"> Marketing Department </mat-option>
+             <mat-option  value="sales department.">Sales Department</mat-option>
+             <mat-option  value="accounting/finance">Accounting/Finance</mat-option>
+              <mat-option value="it">IT</mat-option>
+             </mat-select>
+             <mat-error *ngIf="!employeeform.get('EmpDepartment').valid && employeeform.get('EmpDepartment').touched">
+             Department is required
+            </mat-error>
+        </mat-form-field>
+
+          <mat-label>Skills </mat-label>
+          <p *ngFor="let choice of checkBoxData; let i=index">
+          <input  value="{{choice.value}}" (change)="onchangeSkills($event)" [checked]="requestArray.indexOf(choice.value) != -1"
+
+            type="checkbox">&nbsp;{{choice.name}}
+          </p>
+
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [disabled]="!employeeform.valid" (click)="onSubmit()">{{actionBtn}}</button>&nbsp;
+          <button type="button" mat-raised-button color="accent" (click)="formReset()">Reset</button>&nbsp;
+          <button type="button" mat-raised-button [mat-dialog-close]>Close</button>
+        </mat-card-actions>
+
+  </form>
+</mat-card-content>
+</mat-card>

@@ -1,0 +1,23 @@
+mat-card-content{
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  flex-grow:1;
+}
+mat-card
+{
+padding-top: 10px;
+width: 600px;
+height: 760px;
+margin: auto;
+overflow: hidden;
+}
+span{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+mat-form-field{
+  width: 100%;
+}
+
