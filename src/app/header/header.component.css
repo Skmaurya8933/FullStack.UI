@@ -1,6 +1,10 @@
 .spacer{
   flex:1 1 auto;
 }
+.dispName{
+  font-weight:400;
+  font-size: 14px;
+}
 
 mat-toolbar{
   width: 99.9%;
@@ -14,10 +18,9 @@ mat-toolbar{
   border-radius: 10px;
 }
 .icon-display{
-  transform:scale(1.9);
+  transform:scale(1.5);
 }
 .btn-menu{
-
   font-size: 1rem;
 }
 
