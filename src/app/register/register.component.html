@@ -1,67 +1,70 @@
-<mat-toolbar color="primary">
-  <span>SignUp</span>
-</mat-toolbar>
-<mat-card>
-<mat-card-content>
-  <form class="my-form" [formGroup]="signupform">
-    <mat-form-field appearance="outline">
-      <mat-label>First Name</mat-label>
-      <input type="text" matInput formControlName="FirstName" required>
-      <mat-error *ngIf="!signupform.get('FirstName').valid && signupform.get('FirstName').touched">
-       First name is required
-       </mat-error>
-    </mat-form-field>
 
+  <mat-toolbar color="primary">
+    <span>SignUp</span>
+  </mat-toolbar>
+  <mat-card>
+  <mat-card-content>
+    <form class="my-form" [formGroup]="signupform">
       <mat-form-field appearance="outline">
-        <mat-label>LastName</mat-label>
-        <input type="text" matInput formControlName="LastName" required>
-        <mat-error *ngIf="!signupform.get('LastName').valid && signupform.get('LastName').touched">
-          Last name is required
-          </mat-error>
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="FirstName" required>
+        <mat-error *ngIf="!signupform.get('FirstName').valid && signupform.get('FirstName').touched">
+         First name is required
+         </mat-error>
       </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Username</mat-label>
-          <input type="text" matInput formControlName="Username" required>
-        <mat-error *ngIf="!signupform.get('Username').valid && signupform.get('Username').touched">
-          Username is required
-        </mat-error>
+          <mat-label>LastName</mat-label>
+          <input type="text" matInput formControlName="LastName" required>
+          <mat-error *ngIf="!signupform.get('LastName').valid && signupform.get('LastName').touched">
+            Last name is required
+            </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input type="email" matInput formControlName="Useremail" required>
-          <mat-error *ngIf="!signupform.get('Useremail').valid && signupform.get('Useremail').touched">
-            Please enter a valid email address
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="Username" required>
+          <mat-error *ngIf="!signupform.get('Username').valid && signupform.get('Username').touched">
+            Username is required
           </mat-error>
-          <mat-error *ngIf="signupform.get('required')">
-            Email is <strong>required</strong>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="Useremail" required>
+            <mat-error *ngIf="!signupform.get('Useremail').valid && signupform.get('Useremail').touched">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="signupform.get('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="tel" matInput formControlName="Userphone" required>
+            <mat-error *ngIf="!signupform.get('Userphone').valid && signupform.get('Userphone').touched">
+              Phone is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="Password" required>
+          <mat-error *ngIf="!signupform.get('Password').valid && signupform.get('Password').touched">
+            Password is required
           </mat-error>
-        </mat-form-field>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="!signupform.valid" (click)="onsubmit()">Submit</button>&nbsp;
+            <button type="button" mat-raised-button color="accent" (click)="formReset()">Reset</button>&nbsp;
+            <button type="button" mat-raised-button [mat-dialog-close]>Close</button>
+          </mat-card-actions>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Phone</mat-label>
-          <span matPrefix>+91 &nbsp;</span>
-          <input type="tel" matInput formControlName="Userphone" required>
-          <mat-error *ngIf="!signupform.get('Userphone').valid && signupform.get('Userphone').touched">
-            Phone is required
-          </mat-error>
-        </mat-form-field>
+    </form>
+  </mat-card-content>
+  </mat-card>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input type="password" matInput formControlName="Password" required>
-        <mat-error *ngIf="!signupform.get('Password').valid && signupform.get('Password').touched">
-          Password is required
-        </mat-error>
-        </mat-form-field>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" [disabled]="!signupform.valid" (click)="onsubmit()">Submit</button>&nbsp;
-          <button type="button" mat-raised-button color="accent" (click)="formReset()">Reset</button>&nbsp;
-          <button type="button" mat-raised-button [mat-dialog-close]>Close</button>
-        </mat-card-actions>
 
-  </form>
-</mat-card-content>
-</mat-card>
 
